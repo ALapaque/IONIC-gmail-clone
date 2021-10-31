@@ -1,0 +1,9 @@
+<ion-content>
+  <app-search-overlay slot="fixed"></app-search-overlay>
+
+  <ion-refresher #ionRefresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content refreshing-spinner="crescent"></ion-refresher-content>
+  </ion-refresher>
+
+  <app-mail-list [mails]="mails$ | async"></app-mail-list>
+</ion-content>
