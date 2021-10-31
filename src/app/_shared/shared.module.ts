@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HideHeaderDirective } from './directives/hide-header.directive';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HideHeaderDirective} from './directives/hide-header.directive';
 
 @NgModule({
   declarations: [
@@ -8,6 +8,8 @@ import { HideHeaderDirective } from './directives/hide-header.directive';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [HideHeaderDirective]
 })
-export class SharedModule { }
+export class SharedModule {
+}

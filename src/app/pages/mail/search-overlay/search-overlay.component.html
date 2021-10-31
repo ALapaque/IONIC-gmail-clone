@@ -1,13 +1,15 @@
-<ion-row class="ion-align-items-center">
-  <ion-col size="2">
-    <ion-menu-button color="dark"></ion-menu-button>
-  </ion-col>
-  <ion-col size="8">
-    <ion-input placeholder="Search in emails"></ion-input>
-  </ion-col>
-  <ion-col size="2">
-    <ion-avatar tappable (click)="openAccount($event)">
-      <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg">
-    </ion-avatar>
-  </ion-col>
-</ion-row>
+<div #searchContainer slot="fixed" class="search-overlay">
+  <ion-row class="ion-align-items-center">
+    <ion-col size="2">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-col>
+    <ion-col size="8">
+      <ion-input placeholder="Search in emails"></ion-input>
+    </ion-col>
+    <ion-col size="2">
+      <ion-avatar tappable (click)="openAccount($event)">
+        <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg">
+      </ion-avatar>
+    </ion-col>
+  </ion-row>
+</div>

@@ -10,6 +10,7 @@ import { MailPage } from './mail.page';
 import {SearchOverlayComponent} from './search-overlay/search-overlay.component';
 import {MailListComponent} from './mail-list/mail-list.component';
 import {AccountPageModule} from '../account/account.module';
+import {SharedModule} from '../../_shared/shared.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {AccountPageModule} from '../account/account.module';
     FormsModule,
     IonicModule,
     MailPageRoutingModule,
-    AccountPageModule
+    AccountPageModule,
+    SharedModule
   ],
   declarations: [MailPage, SearchOverlayComponent, MailListComponent]
 })

@@ -1,5 +1,5 @@
-<ion-content>
-  <app-search-overlay slot="fixed"></app-search-overlay>
+<ion-content scroll-events="true" [appHideHeader]="search">
+  <app-search-overlay #search slot="fixed"></app-search-overlay>
 
   <ion-refresher #ionRefresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content refreshing-spinner="crescent"></ion-refresher-content>

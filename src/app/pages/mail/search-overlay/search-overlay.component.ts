@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {PopoverController} from '@ionic/angular';
 import {AccountPage} from '../../account/account.page';
 
@@ -8,6 +8,7 @@ import {AccountPage} from '../../account/account.page';
   styleUrls: ['./search-overlay.component.scss'],
 })
 export class SearchOverlayComponent implements OnInit {
+  @ViewChild('searchContainer') public searchContainer: ElementRef;
 
   constructor(
     private popoverController: PopoverController,
