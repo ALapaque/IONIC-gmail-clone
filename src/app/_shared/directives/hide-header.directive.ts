@@ -24,6 +24,7 @@ export class HideHeaderDirective {
   }
 
   @HostListener('ionScroll', ['$event']) onContentScroll($event: any) {
+    if ($event.detail.currentY <= 0 || $event.detail.currentY === this._saveY) return;
     const scrollTop: number = $event.detail.scrollTop;
     let newDirection: Direction = Direction.DOWN;
     let newPosition: number = -scrollTop + this._previousY;
@@ -40,7 +41,7 @@ export class HideHeaderDirective {
     let opacity = 1 - (newPosition / -this._scrollDistance);
 
     this._domController.write(() => {
-      this._renderer.setStyle(this.header.searchContainer.nativeElement, 'top', newPosition);
+      this._renderer.setStyle(this.header.searchContainer.nativeElement, 'top', newPosition + 'px');
       this._renderer.setStyle(this.header.searchContainer.nativeElement, 'opacity', opacity);
     });
 
