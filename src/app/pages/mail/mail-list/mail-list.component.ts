@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
 import {Mail} from '../../../_shared/models/mail.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-mail-list',
@@ -10,10 +10,15 @@ import {Mail} from '../../../_shared/models/mail.model';
 export class MailListComponent implements OnInit {
   @Input() mails: Array<Mail>;
 
-  constructor() {
+  constructor(
+    private _router: Router
+  ) {
   }
 
   ngOnInit() {
   }
 
+  openDetails(mail: Mail) {
+    this._router.navigate(['tabs', 'mail', mail.id]);
+  }
 }

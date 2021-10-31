@@ -9,13 +9,15 @@ import { MailPageRoutingModule } from './mail-routing.module';
 import { MailPage } from './mail.page';
 import {SearchOverlayComponent} from './search-overlay/search-overlay.component';
 import {MailListComponent} from './mail-list/mail-list.component';
+import {AccountPageModule} from '../account/account.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MailPageRoutingModule
+    MailPageRoutingModule,
+    AccountPageModule
   ],
   declarations: [MailPage, SearchOverlayComponent, MailListComponent]
 })

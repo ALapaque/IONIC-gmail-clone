@@ -1,4 +1,6 @@
-import {Component,  OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PopoverController} from '@ionic/angular';
+import {AccountPage} from '../../account/account.page';
 
 @Component({
   selector: 'app-search-overlay',
@@ -7,13 +9,21 @@ import {Component,  OnInit} from '@angular/core';
 })
 export class SearchOverlayComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private popoverController: PopoverController,
+  ) {
   }
 
   ngOnInit() {
   }
 
-  openAccount($event: MouseEvent) {
+  async openAccount($event) {
+    const popover = await this.popoverController.create({
+      component: AccountPage,
+      event: $event,
+      cssClass: 'custom-popover'
+    });
 
+    await popover.present();
   }
 }
